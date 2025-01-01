@@ -52,7 +52,7 @@ public class User {
     private String email;
 
     @JsonIgnore
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 120)
     private String password;
 
     @Column(unique = true, nullable = false, length = 30)

@@ -11,11 +11,9 @@ import com.isyll.password_manager.models.User;
 @Repository
 public interface UserRepository extends PagingAndSortingRepository<User, Long>, CrudRepository<User, Long> {
 
-        User findByUsername(String username);
+        User findByEmail(String email);
 
         boolean existsByEmail(String email);
-
-        boolean existsByUsername(String username);
 
         boolean existsByPhone(String phone);
 

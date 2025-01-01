@@ -9,7 +9,6 @@ import com.isyll.password_manager.validators.E164PhoneValidation;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -22,8 +21,8 @@ import lombok.NoArgsConstructor;
 public class UpdateUserRequest {
 
     @NotBlank(message = "{validation.user.birthdate_is_mandatory}")
-    @Past(message = "{validation.user.birthdate_must_be_in_past}")
     @DateValidation(message = "{validation.user.birthdate_is_invalid}")
+    @JsonProperty("date_of_birth")
     private String dateOfBirth;
 
     @Pattern(regexp = "^(?=.*[0-9])(?=.*[A-Za-z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,}$", message = "{validation.user.password_is_invalid}")
