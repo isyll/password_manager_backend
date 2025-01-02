@@ -74,11 +74,11 @@ public class User {
     @Column(nullable = false, length = 250)
     private String lastName;
 
-    @JsonProperty(access = Access.READ_ONLY)
+    @JsonProperty(value = "created_at", access = Access.READ_ONLY)
     @Column(name = "created_at", nullable = false)
     private ZonedDateTime createdAt;
 
-    @JsonProperty(access = Access.READ_ONLY)
+    @JsonProperty(value = "updated_at", access = Access.READ_ONLY)
     @Column(name = "updated_at", nullable = false)
     private ZonedDateTime updatedAt;
 
